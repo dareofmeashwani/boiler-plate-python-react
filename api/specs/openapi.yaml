@@ -1,0 +1,61 @@
+# swagger.yml
+
+openapi: 3.0.0
+info:
+  title: "Flask REST API"
+  description: "Bolierplate Flask Rest API"
+  version: "1.0.0"
+  contact:
+    email: connect2ashwaniverma@gmail.com
+
+servers:
+  - url: "/api/v1"
+
+paths:
+  /healthz:
+    get:
+      operationId: "healthz.get"
+      tags:
+        - "Healthz"
+      summary: "return the heathz state of the service"
+      responses:
+        "200":
+          $ref: "#/components/responses/healthStatusOk"
+
+components:
+  #######################################
+  ############   Responses  ###############
+  #######################################
+  responses:
+    healthStatusOk:
+      description: resume api ready
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/healthStatus"
+            properties:
+              status:
+                example: OK
+    healthStatusError:
+      description: resume api not ready
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/healthStatus"
+            properties:
+              status:
+                example: NOT OK
+  #######################################
+  ############   Schemas  ###############
+  #######################################
+  schemas:
+    healthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - OK
+            - NOT OK
