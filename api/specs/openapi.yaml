@@ -14,7 +14,7 @@ servers:
 paths:
   /healthz:
     get:
-      operationId: "healthz.get"
+      operationId: "handlers.healthz.get"
       tags:
         - "Healthz"
       summary: "return the heathz state of the service"
