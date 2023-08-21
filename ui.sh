@@ -1,1 +1,1 @@
-npm run start --prefix ui
+pwd

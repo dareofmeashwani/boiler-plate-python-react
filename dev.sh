@@ -1,0 +1,1 @@
+./parallel.sh "./backend.sh" "./ui.sh"
