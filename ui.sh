@@ -1,1 +1,1 @@
-pwd
+npm run build --prefix ui
