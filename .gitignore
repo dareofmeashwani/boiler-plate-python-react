@@ -130,4 +130,3 @@ dmypy.json
 .env
 
 **/node_modules
-.vscode
